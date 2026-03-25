@@ -51,12 +51,6 @@ export default function App() {
       <div className="layout">
         {/* ── チェックリスト（メインカラム） ── */}
         <div>
-          <div className="info-note">
-            💡 <strong>軽症高額特例の条件</strong>
-            ：月の自己負担額が10,000円を超える月が、過去12ヶ月以内に3回以上あること。
-            投与月以外の「空白月」に目標点数を達成する診療セットを構築してください。
-          </div>
-
           <div className="card">
             <div className="card-header">
               <svg
