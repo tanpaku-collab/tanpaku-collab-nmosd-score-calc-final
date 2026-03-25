@@ -29,6 +29,17 @@ export type CheckedMap = Record<string, boolean>
 export type QtyMap = Record<string, number>
 
 // ─────────────────────────────────────────
+// Free input
+// ─────────────────────────────────────────
+
+/** 自由入力セクションの1行 */
+export interface FreeItem {
+  id: string
+  name: string
+  score: string // input value として string で保持、計算時に parseInt
+}
+
+// ─────────────────────────────────────────
 // LocalStorage preset
 // ─────────────────────────────────────────
 

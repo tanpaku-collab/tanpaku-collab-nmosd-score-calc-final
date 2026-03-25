@@ -325,6 +325,117 @@
     line-height: 1.6;
     margin-bottom: 12px;
   }
+
+  /* ════════════════════════════
+     FREE INPUT SECTION（自由入力）
+     ════════════════════════════ */
+  .free-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 8px;
+  }
+
+  .free-item-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 4px;
+  }
+
+  .free-input {
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    padding: 7px 10px;
+    font-family: var(--sans);
+    font-size: 13px;
+    outline: none;
+    background: #fff;
+    color: var(--text);
+    transition: border-color .15s, background .15s;
+    /* タップしやすい最低高さ */
+    min-height: 38px;
+  }
+  .free-input:focus {
+    border-color: var(--primary-mid);
+    background: var(--primary-light);
+  }
+  .free-input.has-value {
+    border-color: #bfdbfe;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+
+  .free-input-name  { flex: 1; min-width: 0; }
+
+  .free-input-score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .free-input-score {
+    width: 72px;
+    text-align: right;
+    /* number input の矢印を非表示 */
+    -moz-appearance: textfield;
+  }
+  .free-input-score::-webkit-inner-spin-button,
+  .free-input-score::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  .free-input-unit {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .free-delete-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all .15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .free-delete-btn:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: var(--danger);
+  }
+
+  .free-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 4px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    border: 1.5px dashed var(--border-strong);
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .15s;
+    -webkit-tap-highlight-color: transparent;
+    align-self: flex-start;
+  }
+  .free-add-btn:hover {
+    border-color: var(--primary-mid);
+    color: var(--primary);
+    background: var(--primary-light);
+  }
 }
 
 /* ── Scrollbar ── */
