@@ -7,8 +7,6 @@ interface ScoreMeterProps {
 export function ScoreMeter({ total }: ScoreMeterProps) {
   const pct = Math.min(100, (total / TARGET_SCORE) * 100)
   const achieved = total >= TARGET_SCORE
-  const copay = Math.floor(total * 10 * 0.2) // 2割負担
-  const remain = Math.max(0, TARGET_SCORE - total)
 
   const barColor = achieved
     ? '#0e9f6e'
@@ -40,27 +38,6 @@ export function ScoreMeter({ total }: ScoreMeterProps) {
             className={`pip${pct >= p ? ' filled' : pct >= p - 25 ? ' partial' : ''}`}
           />
         ))}
-      </div>
-
-      <div className="meter-stats" style={{ marginTop: 12 }}>
-        <div className="stat-box">
-          <div className="stat-label">2割自己負担（目安）</div>
-          <div
-            className="stat-value"
-            style={{ color: achieved ? '#0e9f6e' : '#1e293b' }}
-          >
-            ¥{copay.toLocaleString()}
-          </div>
-        </div>
-        <div className="stat-box">
-          <div className="stat-label">あと</div>
-          <div
-            className="stat-value"
-            style={{ color: achieved ? '#0e9f6e' : '#ef4444' }}
-          >
-            {achieved ? '達成！' : `${remain.toLocaleString()}点`}
-          </div>
-        </div>
       </div>
 
       {achieved && (
