@@ -25,7 +25,7 @@ export function Header({ total }: HeaderProps) {
             <span className="app-header-title">NMOSD 外来点数</span>
             <span className="app-header-badge">軽症高額特例</span>
           </div>
-          <div className="app-header-sub">自己負担10,000円超の診療セット</div>
+          <div className="app-header-sub">医療費総額33,330円超の診療セット</div>
         </div>
 
         {/* ── スコアバー ── */}
