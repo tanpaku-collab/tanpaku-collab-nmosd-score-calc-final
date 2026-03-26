@@ -25,22 +25,26 @@ function Checkmark() {
 export function ItemRow({ item, checked, qty, onToggle, onQty }: ItemRowProps) {
   const effectiveQty = qty || 1
   const total = item.score * (item.qty ? effectiveQty : 1)
+  const showQty = item.qty && checked
 
   return (
     <div
-      className={`item-row${checked ? ' checked' : ''}`}
+      className={`item-row${checked ? ' checked' : ''}${showQty ? ' has-qty' : ''}`}
       onClick={() => onToggle(item.id)}
     >
+      {/* チェックボックス */}
       <div className="item-checkbox">
         {checked && <Checkmark />}
       </div>
 
-      <div style={{ flex: 1, minWidth: 0 }}>
+      {/* 項目名 + サブテキスト */}
+      <div className="item-text">
         <div className="item-name">{item.name}</div>
         {item.sub && <div className="item-sub">{item.sub}</div>}
       </div>
 
-      {item.qty && checked && (
+      {/* 数量コントロール（qty=true かつ checked 時のみ） */}
+      {showQty && (
         <div
           className="qty-ctrl"
           onClick={(e) => e.stopPropagation()}
@@ -61,8 +65,9 @@ export function ItemRow({ item, checked, qty, onToggle, onQty }: ItemRowProps) {
         </div>
       )}
 
+      {/* 点数 */}
       <div className="item-score">
-        {item.qty && checked && effectiveQty > 1
+        {showQty && effectiveQty > 1
           ? `${total.toLocaleString()}点`
           : `${item.score.toLocaleString()}点`}
       </div>
