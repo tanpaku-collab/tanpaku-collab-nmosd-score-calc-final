@@ -484,6 +484,50 @@
   .preset-meta     { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-family: var(--mono); }
   .preset-actions  { display: flex; gap: 4px; margin-top: 8px; }
 
+  /* 上書きモード中のアクティブカード */
+  .preset-card-active {
+    border-color: var(--primary-mid) !important;
+    background: var(--primary-light) !important;
+  }
+  .preset-card-active .preset-name { color: var(--primary); }
+
+  /* 上書きモードインジケーター */
+  .overwrite-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 7px;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+  }
+  .overwrite-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .overwrite-cancel {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 5px;
+    padding: 2px 7px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .12s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .overwrite-cancel:hover { background: var(--border); color: var(--text); }
+
+  /* 上書きモード時の入力欄のアクセント */
+  .input-overwrite {
+    border-color: var(--primary-mid) !important;
+    background: #eff6ff !important;
+  }
+
   /* ── Progress Pips ── */
   .progress-pips { display: flex; gap: 4px; margin-top: 10px; }
   .pip           { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background .3s; }
